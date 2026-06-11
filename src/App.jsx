@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
-import JSXBasics from './JSXBasics';
-import ComponentsTutorial from './ComponentsTutorial';
-import PropsTutorial from './PropsTutorial';
-import StateTutorial from './StateTutorial';
-import EffectsTutorial from './EffectsTutorial';
-import ConditionalTutorial from './ConditionalTutorial';
-import ListsTutorial from './ListsTutorial';
-import FormsTutorial from './FormsTutorial';
-import HooksTutorial from './HooksTutorial';
-import ContextTutorial from './ContextTutorial';
-import CustomHooksTutorial from './CustomHooksTutorial';
-import OptimizationTutorial from './OptimizationTutorial';
+import Home from './layout/Home';
+import JSXBasics from './components/JSXBasics';
+import ComponentsTutorial from './components/ComponentsTutorial';
+import PropsTutorial from './components/PropsTutorial';
+import StateTutorial from './components/StateTutorial';
+import EffectsTutorial from './components/EffectsTutorial';
+import ConditionalTutorial from './components/ConditionalTutorial';
+import ListsTutorial from './components/ListsTutorial';
+import FormsTutorial from './components/FormsTutorial';
+import HooksTutorial from './components/HooksTutorial';
+import ContextTutorial from './components/ContextTutorial';
+import CustomHooksTutorial from './components/CustomHooksTutorial';
+import OptimizationTutorial from './components/OptimizationTutorial';
 
 function App() {
   return (

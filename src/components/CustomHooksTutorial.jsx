@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 // Custom Hooks
 function useCounter(initialValue = 0) {
@@ -116,7 +116,7 @@ export default function CustomHooksTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">What are Custom Hooks?</h2>
           <p className="text-gray-600 mb-4">
-            Custom Hooks are JavaScript functions that use one or more React Hooks. They let you extract 
+            Custom Hooks are JavaScript functions that use one or more React Hooks. They let you extract
             component logic into reusable functions. A custom hook is just a function whose name starts with "use".
           </p>
           <p className="text-gray-600">
@@ -142,11 +142,17 @@ export default function CustomHooksTutorial() {
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto mb-4">
             <p>function useCounter(initialValue = 0) {'{'}
               <p className="ml-4">const [count, setCount] = useState(initialValue);</p>
-              <p className="ml-4 mt-2">const increment = () => setCount(count + 1);</p>
-              <p className="ml-4">const decrement = () => setCount(count - 1);</p>
-              <p className="ml-4">const reset = () => setCount(initialValue);</p>
+              <p className="ml-4 mt-2">
+                const increment = () =&gt; setCount(count + 1);
+              </p>
+              <p className="ml-4">
+                const decrement = () =&gt; setCount(count - 1);
+              </p>
+              <p className="ml-4">
+                const reset = () =&gt; setCount(initialValue);
+              </p>
               <p className="ml-4 mt-2">return {'{'}count, increment, decrement, reset{'}'};</p>
-            {'}'}
+              {'}'}
             </p>
           </div>
           <CounterDemo />
@@ -162,11 +168,13 @@ export default function CustomHooksTutorial() {
               <p className="ml-4">const [data, setData] = useState(null);</p>
               <p className="ml-4">const [loading, setLoading] = useState(true);</p>
               <p className="ml-4">const [error, setError] = useState(null);</p>
-              <p className="ml-4 mt-2">useEffect(() => {'{'}
-                <p className="ml-8">// Fetch logic here</p>
-              {'}'}, [url]);</p>
+              <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+                {`useEffect(() => {
+  // Fetch logic here
+}, [url]);`}
+              </pre>
               <p className="ml-4 mt-2">return {'{'}data, loading, error{'}'};</p>
-            {'}'}
+              {'}'}
             </p>
           </div>
         </section>
@@ -230,7 +238,7 @@ export default function CustomHooksTutorial() {
             <p>export function useFormInput(initialValue) {'{'}
               <p className="ml-4">const [value, setValue] = useState(initialValue);</p>
               <p className="ml-4">return {'{'}value, setValue{'}'};</p>
-            {'}'}
+              {'}'}
             </p>
             <p className="text-yellow-400 mb-2 mt-3">// In your component</p>
             <p>import {'{'}useFormInput{'}'} from './hooks';</p>
@@ -241,7 +249,7 @@ export default function CustomHooksTutorial() {
         <section className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
           <h3 className="font-bold text-gray-800 mb-2">💡 Key Takeaway</h3>
           <p className="text-gray-700">
-            Custom Hooks are powerful tools for extracting and reusing component logic. They make your code 
+            Custom Hooks are powerful tools for extracting and reusing component logic. They make your code
             more modular and easier to maintain across multiple components.
           </p>
         </section>

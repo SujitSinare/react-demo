@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useMemo } from 'react';
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 function RefExample() {
   const inputRef = useRef(null);
@@ -73,7 +73,7 @@ export default function HooksTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">What are React Hooks?</h2>
           <p className="text-gray-600 mb-4">
-            Hooks are functions that let you "hook into" React features from function components. 
+            Hooks are functions that let you "hook into" React features from function components.
             They were introduced in React 16.8 and allow you to use state and other features without writing class components.
           </p>
           <p className="text-gray-600">
@@ -123,13 +123,15 @@ export default function HooksTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">useCallback Hook</h2>
           <p className="text-gray-600 mb-4">
-            useCallback memoizes a function so it doesn't change unless its dependencies change. 
+            useCallback memoizes a function so it doesn't change unless its dependencies change.
             This is useful for optimizing performance when passing callbacks to child components.
           </p>
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto">
-            <p>const memoizedCallback = useCallback(() => {'{'}
-              <p className="ml-4">console.log(count);</p>
-            {'}'}, [count]);</p>
+            <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+              {`const memoizedCallback = useCallback(() => {
+  console.log(count);
+}, [count]);`}
+            </pre>
           </div>
         </section>
 
@@ -164,13 +166,17 @@ export default function HooksTutorial() {
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto space-y-4">
             <div>
               <p className="text-yellow-400 mb-2">// Initialize state from function</p>
-              <p>const [state, setState] = useState(() => computeExpensiveValue());</p>
+              <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+                {`const [state, setState] = useState(() => computeExpensiveValue());`}
+              </pre>
             </div>
             <div>
               <p className="text-yellow-400 mb-2">// Multiple effects</p>
-              <p>useEffect(() => {...}, []);</p>
-              <p>useEffect(() => {...}, [dep1]);</p>
-              <p>useEffect(() => {...}, [dep1, dep2]);</p>
+              <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+                {`useEffect(() => {...}, []);
+useEffect(() => {...}, [dep1]);
+useEffect(() => {...}, [dep1, dep2]);`}
+              </pre>
             </div>
           </div>
         </section>
@@ -178,7 +184,7 @@ export default function HooksTutorial() {
         <section className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
           <h3 className="font-bold text-gray-800 mb-2">💡 Key Takeaway</h3>
           <p className="text-gray-700">
-            Hooks allow you to use state and other React features in function components. 
+            Hooks allow you to use state and other React features in function components.
             Always follow the rules of hooks and use the ESLint plugin to catch mistakes.
           </p>
         </section>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 function LoginStatus() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -68,7 +68,7 @@ export default function ConditionalTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">What is Conditional Rendering?</h2>
           <p className="text-gray-600 mb-4">
-            Conditional rendering means displaying different content based on certain conditions. 
+            Conditional rendering means displaying different content based on certain conditions.
             You can use JavaScript conditionals to create different JSX elements.
           </p>
           <p className="text-gray-600">
@@ -141,14 +141,18 @@ export default function ConditionalTutorial() {
             </div>
             <div>
               <p className="text-yellow-400 mb-2">// Logical AND</p>
-              <p>{'{'}errors.length > 0 && &lt;ErrorAlert errors={'{errors}'} /&gt;{'}'}</p>
+              <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+                {`{errors.length > 0 && <ErrorAlert errors={errors} />}`}
+              </pre>
             </div>
             <div>
               <p className="text-yellow-400 mb-2">// If/else statement</p>
-              <p>if (isLoading) {'{'}
-                <p className="ml-4">return &lt;div&gt;Loading...&lt;/div&gt;;</p>
-              {'}'}
-              <p>return &lt;div&gt;Content&lt;/div&gt;;</p>
+              <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+                {`if (isLoading) {
+  return <div>Loading...</div>;
+}
+return <div>Content</div>;`}
+              </pre>
             </div>
           </div>
         </section>

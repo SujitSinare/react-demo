@@ -1,4 +1,4 @@
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 function UserCard({ name, age, email }) {
   return (
@@ -21,7 +21,7 @@ export default function PropsTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">What are Props?</h2>
           <p className="text-gray-600 mb-4">
-            Props (properties) are how you pass data from a parent component to a child component. 
+            Props (properties) are how you pass data from a parent component to a child component.
             They are read-only and allow components to be flexible and reusable.
           </p>
           <p className="text-gray-600">
@@ -65,7 +65,7 @@ export default function PropsTutorial() {
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto mb-4">
             <p>function Greeting({'{'}greeting = 'Hello', name = 'Guest'{'}'}) {'{'}
               <p className="ml-4">return &lt;p&gt;{'{greeting}'}, {'{name}'}&lt;/p&gt;;</p>
-            {'}'}
+              {'}'}
             </p>
           </div>
           <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
@@ -84,12 +84,12 @@ export default function PropsTutorial() {
             <p className="text-yellow-400 mb-2">// Without destructuring</p>
             <p>function Card(props) {'{'}
               <p className="ml-4">return &lt;p&gt;{'{props.name}'}&lt;/p&gt;;</p>
-            {'}'}
+              {'}'}
             </p>
             <p className="text-yellow-400 mb-2 mt-4">// With destructuring</p>
             <p>function Card({'{'}name{'}'}) {'{'}
               <p className="ml-4">return &lt;p&gt;{'{name}'}&lt;/p&gt;;</p>
-            {'}'}
+              {'}'}
             </p>
           </div>
         </section>
@@ -119,7 +119,7 @@ export default function PropsTutorial() {
         <section className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
           <h3 className="font-bold text-gray-800 mb-2">💡 Key Takeaway</h3>
           <p className="text-gray-700">
-            Props are the way to pass data from parent to child components. They make components reusable by 
+            Props are the way to pass data from parent to child components. They make components reusable by
             allowing different data to be passed each time the component is used.
           </p>
         </section>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 function SimpleForm() {
   const [formData, setFormData] = useState({
@@ -125,11 +125,11 @@ export default function FormsTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Forms in React</h2>
           <p className="text-gray-600 mb-4">
-            React forms are similar to HTML forms, but the form data is handled by React components 
+            React forms are similar to HTML forms, but the form data is handled by React components
             through state. This makes it easier to manipulate and validate form data.
           </p>
           <p className="text-gray-600">
-            React forms use a technique called "controlled components" where form values are 
+            React forms use a technique called "controlled components" where form values are
             stored in state and updated through event handlers.
           </p>
         </section>
@@ -149,7 +149,7 @@ export default function FormsTutorial() {
               <p className="ml-12">onChange={(e) => setEmail(e.target.value)}</p>
               <p className="ml-8">/&gt;</p>
               <p className="ml-4">);</p>
-            {'}'}
+              {'}'}
             </p>
           </div>
         </section>
@@ -189,12 +189,13 @@ export default function FormsTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Handling Form Submission</h2>
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto">
-            <p>const handleSubmit = (e) => {'{'}
-              <p className="ml-4">e.preventDefault(); // Prevent page reload</p>
-              <p className="ml-4">console.log(formData);</p>
-              <p className="ml-4">// Send data to server</p>
-            {'}'}
-            </p>
+            <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+              {`const handleSubmit = (e) => {
+  e.preventDefault(); // Prevent page reload
+  console.log(formData);
+  // Send data to server
+}`}
+            </pre>
           </div>
         </section>
 
@@ -204,14 +205,16 @@ export default function FormsTutorial() {
             For forms with multiple inputs, use the name attribute to update the correct field:
           </p>
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto">
-            <p>const handleChange = (e) => {'{'}
-              <p className="ml-4">const {'{'}name, value{'}'} = e.target;</p>
-              <p className="ml-4">setFormData(prev => ({'{'}
-                <p className="ml-8">...prev,</p>
-                <p className="ml-8">[name]: value</p>
-              {'}'}));</p>
-            {'}'}
-            </p>
+            <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+              {`const handleChange = (e) => {
+  const { name, value } = e.target;
+
+  setFormData(prev => ({
+    ...prev,
+    [name]: value
+  }));
+}`}
+            </pre>
           </div>
         </section>
 

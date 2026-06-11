@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 export default function JSXBasics() {
   const [count, setCount] = useState(0);
@@ -10,7 +10,7 @@ export default function JSXBasics() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">What is JSX?</h2>
           <p className="text-gray-600 mb-4">
-            JSX is a syntax extension to JavaScript. It lets you write HTML-like code inside JavaScript files. 
+            JSX is a syntax extension to JavaScript. It lets you write HTML-like code inside JavaScript files.
             JSX produces React "elements" and looks similar to HTML/XML.
           </p>
           <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">

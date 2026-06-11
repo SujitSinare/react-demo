@@ -37,12 +37,6 @@ export default function TutorialLayout({ title, icon, children }) {
           >
             ← Back to Home
           </Link>
-          <a
-            href="#"
-            className="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition text-center"
-          >
-            Next Concept →
-          </a>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -64,7 +64,7 @@ export default function StateTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">What is State?</h2>
           <p className="text-gray-600 mb-4">
-            State is data that changes over time in your component. Unlike props which come from the parent, 
+            State is data that changes over time in your component. Unlike props which come from the parent,
             state is managed within the component itself and can be updated by user interactions or other events.
           </p>
           <p className="text-gray-600">
@@ -84,7 +84,9 @@ export default function StateTutorial() {
               <p className="mt-2 ml-4">return (</p>
               <p className="ml-8">&lt;div&gt;</p>
               <p className="ml-12">&lt;p&gt;Count: {'{count}'}&lt;/p&gt;</p>
-              <p className="ml-12">&lt;button onClick={'{'}() => setCount(count + 1){'}'}}&gt;+&lt;/button&gt;</p>
+              <p className="ml-12">
+                &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;+&lt;/button&gt;
+              </p>
               <p className="ml-8">&lt;/div&gt;</p>
               <p className="ml-4">);</p>
               {'}'}

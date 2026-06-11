@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 const ThemeContext = createContext();
 
@@ -21,21 +21,19 @@ function ThemeSwitcher() {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div className={`p-6 rounded-lg border-2 ${
-      theme === 'light' 
-        ? 'bg-yellow-50 border-yellow-200' 
-        : 'bg-slate-800 border-slate-600'
-    }`}>
+    <div className={`p-6 rounded-lg border-2 ${theme === 'light'
+      ? 'bg-yellow-50 border-yellow-200'
+      : 'bg-slate-800 border-slate-600'
+      }`}>
       <p className={`mb-4 font-semibold ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>
         Current Theme: <span className="capitalize">{theme}</span>
       </p>
       <button
         onClick={toggleTheme}
-        className={`px-4 py-2 rounded font-semibold transition ${
-          theme === 'light'
-            ? 'bg-blue-500 text-white hover:bg-blue-600'
-            : 'bg-yellow-500 text-black hover:bg-yellow-600'
-        }`}
+        className={`px-4 py-2 rounded font-semibold transition ${theme === 'light'
+          ? 'bg-blue-500 text-white hover:bg-blue-600'
+          : 'bg-yellow-500 text-black hover:bg-yellow-600'
+          }`}
       >
         Toggle Theme
       </button>
@@ -47,11 +45,10 @@ function ContextExample() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={`p-4 rounded ${
-      theme === 'light'
-        ? 'bg-white text-gray-800 border border-gray-200'
-        : 'bg-slate-700 text-white border border-slate-600'
-    }`}>
+    <div className={`p-4 rounded ${theme === 'light'
+      ? 'bg-white text-gray-800 border border-gray-200'
+      : 'bg-slate-700 text-white border border-slate-600'
+      }`}>
       <p>This content responds to theme changes!</p>
     </div>
   );
@@ -64,11 +61,11 @@ export default function ContextTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">What is Context API?</h2>
           <p className="text-gray-600 mb-4">
-            Context API provides a way to pass data through the component tree without having to pass 
+            Context API provides a way to pass data through the component tree without having to pass
             props down manually at every level. This solves the "prop drilling" problem.
           </p>
           <p className="text-gray-600">
-            Context is designed to share data that can be considered "global" for a tree of React components, 
+            Context is designed to share data that can be considered "global" for a tree of React components,
             such as the current user, theme, or language.
           </p>
         </section>
@@ -98,11 +95,13 @@ export default function ContextTutorial() {
             <p>function MyProvider({'{'}children{'}'}) {'{'}
               <p className="ml-4">const [value, setValue] = useState('default');</p>
               <p className="ml-4 mt-2">return (</p>
-              <p className="ml-8">&lt;MyContext.Provider value={'{'}value, setValue{'}'}>&gt;</p>
+              <p className="ml-8">
+                &lt;MyContext.Provider value=&#123;&#123; value, setValue &#125;&#125;&gt;
+              </p>
               <p className="ml-12">{'{children}'}</p>
               <p className="ml-8">&lt;/MyContext.Provider&gt;</p>
               <p className="ml-4">);</p>
-            {'}'}
+              {'}'}
             </p>
           </div>
         </section>
@@ -114,7 +113,7 @@ export default function ContextTutorial() {
             <p>function MyComponent() {'{'}
               <p className="ml-4">const {'{'}value, setValue{'}'} = useContext(MyContext);</p>
               <p className="ml-4 mt-2">return &lt;p&gt;{'{value}'}&lt;/p&gt;;</p>
-            {'}'}
+              {'}'}
             </p>
           </div>
         </section>

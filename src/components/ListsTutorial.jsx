@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 function TodoList() {
   const [todos, setTodos] = useState([
@@ -84,9 +84,8 @@ function UserList() {
                 <td className="p-2">{user.name}</td>
                 <td className="p-2">{user.email}</td>
                 <td className="p-2">
-                  <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                    user.role === 'Admin' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'
-                  }`}>
+                  <span className={`px-2 py-1 rounded text-xs font-semibold ${user.role === 'Admin' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'
+                    }`}>
                     {user.role}
                   </span>
                 </td>
@@ -109,7 +108,7 @@ export default function ListsTutorial() {
             To render lists in React, use the array map() method to transform each item into a React element.
           </p>
           <p className="text-gray-600">
-            Each list item should have a unique "key" prop. Keys help React identify which items have changed, 
+            Each list item should have a unique "key" prop. Keys help React identify which items have changed,
             been added, or been removed.
           </p>
         </section>
@@ -142,12 +141,15 @@ export default function ListsTutorial() {
             <p className="mt-2">function ItemList() {'{'}
               <p className="ml-4">return (</p>
               <p className="ml-8">&lt;ul&gt;</p>
-              <p className="ml-12">{'{'}items.map((item) => (</p>
-              <p className="ml-16">&lt;li key={'{item.id}'}>{'{item.name}'}&lt;/li&gt;</p>
+              <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+                {`{items.map((item) => (
+  <li key={item.id}>{item.name}</li>
+))}`}
+              </pre>
               <p className="ml-12">)){'}'}</p>
               <p className="ml-8">&lt;/ul&gt;</p>
               <p className="ml-4">);</p>
-            {'}'}
+              {'}'}
             </p>
           </div>
         </section>
@@ -205,7 +207,7 @@ export default function ListsTutorial() {
         <section className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
           <h3 className="font-bold text-gray-800 mb-2">💡 Key Takeaway</h3>
           <p className="text-gray-700">
-            Always use a unique, stable identifier as the key when rendering lists in React. 
+            Always use a unique, stable identifier as the key when rendering lists in React.
             This ensures correct behavior and optimal performance.
           </p>
         </section>

@@ -1,5 +1,5 @@
 import { useState, memo, useMemo, useCallback } from 'react';
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 const OptimizedChild = memo(function OptimizedChild({ count, onIncrement }) {
   console.log('OptimizedChild rendered');
@@ -69,7 +69,7 @@ export default function OptimizationTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">React Performance Optimization</h2>
           <p className="text-gray-600 mb-4">
-            Optimizing React applications means reducing unnecessary renders and speeding up rendering. 
+            Optimizing React applications means reducing unnecessary renders and speeding up rendering.
             Most of the time, React is fast enough, but understanding optimization techniques helps when you need them.
           </p>
           <p className="text-gray-600">
@@ -103,7 +103,7 @@ export default function OptimizationTutorial() {
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto">
             <p>const MyComponent = memo(function MyComponent(props) {'{'}
               <p className="ml-4">return &lt;div&gt;{'{props.value}'}&lt;/div&gt;;</p>
-            {'}'});</p>
+              {'}'});</p>
           </div>
         </section>
 
@@ -113,9 +113,11 @@ export default function OptimizationTutorial() {
             useMemo caches computation results until dependencies change:
           </p>
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto">
-            <p>const result = useMemo(() => {'{'}
-              <p className="ml-4">return expensiveCalculation(data);</p>
-            {'}'}, [data]);</p>
+            <pre>
+              {`const result = useMemo(() => {
+  return expensiveCalculation(data);
+}, [data]);`}
+            </pre>
           </div>
         </section>
 
@@ -125,9 +127,11 @@ export default function OptimizationTutorial() {
             useCallback prevents function recreation on every render:
           </p>
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto">
-            <p>const handleClick = useCallback(() => {'{'}
+            <pre>
+              {`const handleClick = useCallback(() => {'{'}
               <p className="ml-4">console.log('Clicked!');</p>
-            {'}'}, []);</p>
+            {'}'}, []);`}
+            </pre>
           </div>
         </section>
 
@@ -144,8 +148,13 @@ export default function OptimizationTutorial() {
           </p>
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto">
             <p>import {'{'}lazy, Suspense{'}'} from 'react';</p>
-            <p className="mt-2">const HeavyComponent = lazy(() => import('./HeavyComponent'));</p>
-            <p className="mt-2">&lt;Suspense fallback={'{'}>&lt;div&gt;Loading...&lt;/div&gt;{'}'}&gt;</p>
+            <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+              {`const HeavyComponent = lazy(() => import('./HeavyComponent'));
+
+<Suspense fallback={<div>Loading...</div>}>
+  <HeavyComponent />
+</Suspense>`}
+            </pre>
             <p className="ml-4">&lt;HeavyComponent /&gt;</p>
             <p>&lt;/Suspense&gt;</p>
           </div>

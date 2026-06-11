@@ -1,4 +1,4 @@
-import TutorialLayout from './TutorialLayout';
+import TutorialLayout from '../layout/TutorialLayout';
 
 function WelcomeComponent() {
   return <div className="p-4 bg-green-100 rounded-lg text-green-800 font-semibold">Welcome to React Components!</div>;
@@ -15,11 +15,11 @@ export default function ComponentsTutorial() {
         <section>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">What are Components?</h2>
           <p className="text-gray-600 mb-4">
-            Components are the building blocks of React applications. They are reusable, independent pieces of UI 
+            Components are the building blocks of React applications. They are reusable, independent pieces of UI
             that manage their own content, presentation, and behavior.
           </p>
           <p className="text-gray-600">
-            There are two types of components: <strong>Function Components</strong> and <strong>Class Components</strong>. 
+            There are two types of components: <strong>Function Components</strong> and <strong>Class Components</strong>.
             Modern React emphasizes Function Components as they're simpler and work with Hooks.
           </p>
         </section>
@@ -32,7 +32,7 @@ export default function ComponentsTutorial() {
           <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm overflow-x-auto mb-4">
             <p>function Welcome() {'{'}
               <p className="ml-4">return &lt;h1&gt;Hello!&lt;/h1&gt;;</p>
-            {'}'}
+              {'}'}
             </p>
           </div>
           <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
@@ -105,7 +105,7 @@ export default function ComponentsTutorial() {
               <p className="text-yellow-400 mb-2">// Simple Function Component</p>
               <p>function Button() {'{'}
                 <p className="ml-4">return &lt;button&gt;Click me&lt;/button&gt;;</p>
-              {'}'}
+                {'}'}
               </p>
             </div>
             <div>
@@ -117,7 +117,7 @@ export default function ComponentsTutorial() {
                 <p className="ml-12">&lt;Button /&gt;</p>
                 <p className="ml-8">&lt;/div&gt;</p>
                 <p className="ml-4">);</p>
-              {'}'}
+                {'}'}
               </p>
             </div>
           </div>
